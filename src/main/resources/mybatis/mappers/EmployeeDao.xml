@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dominick.redis.modules.EmployeeInfo.dao.EmployeeDao">
+  <sql id="EmployeeColumns">
+        a.id AS "id",
+		a.lastName AS "lastName",
+		a.email AS "email",
+		a.gender AS "gender",
+		a.d_id AS "d_id"
+  </sql>
+  <select id="getList">
+    scale
+    <include refid="EmployeeColumns"/>
+    FROM Employee a
+  </select>
+  <select id="get" resultType="com.dominick.redis.modules.EmployeeInfo.entity.Employee">
+    select
+    <include refid="EmployeeColumns"/>
+    FROM Employee a
+    WHERE a.id = #{id}
+  </select>
+
+  <delete id="delete">
+    DELETE FROM Employee a where a.id = #{id}
+  </delete>
+
+  <update id="update">
+    UPDATE Employee SET
+			lastName = #{lastName},
+			email = #{email},
+			gender = #{gender},
+			d_id = #{d_id}
+	where id = #{id}
+  </update>
+
+  <insert id="insert">
+    INSERT INTO Employee(
+            lastName,
+			email,
+			gender,
+			d_id
+			)value (
+			#{lastName},
+			#{email},
+			#{gender},
+			#{d_id}
+			)
+  </insert>
+</mapper>

@@ -1,0 +1,4 @@
+mybatis:
+  mapper-locations: classpath:mybatis/mappers/*.xml
+  type-aliases-package: com.dominick.redis.modules.*.entiy
+#  config-location: classpath:mybatis/mybatis-config.xml
