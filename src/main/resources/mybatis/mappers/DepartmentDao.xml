@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dominick.redis.modules.DepartmentInfo.dao.DepartmentDao">
+  <sql id="DepartmentColumns">
+        a.id AS "id",
+		a.departmentName AS "departmentName"
+  </sql>
+  <select id="getList">
+    scale
+    <include refid="DepartmentColumns"/>
+    FROM department a
+  </select>
+  <select id="get" resultType="com.dominick.redis.modules.DepartmentInfo.entity.Department">
+    select
+    <include refid="DepartmentColumns"/>
+    FROM department a
+    WHERE a.id = #{id}
+  </select>
+
+  <delete id="delete">
+    DELETE FROM department a where a.id = #{id}
+  </delete>
+
+  <update id="update">
+    UPDATE department SET	departmentName = #{departmentName}
+	where id = #{id}
+  </update>
+
+  <insert id="insert">
+    INSERT INTO department(
+            departmentName
+			)value (
+			#{departmentName}
+			)
+  </insert>
+</mapper>

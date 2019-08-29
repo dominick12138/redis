@@ -1,6 +1,6 @@
-package com.dominick.redis.mapper;
+package com.dominick.redis.config.mapper;
 
-import com.dominick.redis.modules.EmployeeInfo.entity.Department;
+import com.dominick.redis.modules.DepartmentInfo.entity.Department;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

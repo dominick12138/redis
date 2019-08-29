@@ -1,4 +1,4 @@
-package com.dominick.redis.modules.EmployeeInfo.entity;
+package com.dominick.redis.modules.DepartmentInfo.entity;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.dominick.redis.mapper;
+package com.dominick.redis.config.mapper;
 
 
 import com.dominick.redis.modules.EmployeeInfo.entity.Employee;
