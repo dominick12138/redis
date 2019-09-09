@@ -38,14 +38,14 @@ public interface CrudDao<T> extends BaseDao{
 	 * @param entity
 	 * @return
 	 */
-	public int inset(T entity);
+	public int insert(T entity);
 
 	/**
 	 * 更新数据
 	 * @param entity
 	 * @return
 	 */
-	public T update(T entity);
+	public int update(T entity);
 
 	/**
 	 * 删除数据

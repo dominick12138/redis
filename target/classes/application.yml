@@ -1,4 +1,8 @@
-mybatis:
-  mapper-locations: classpath:mybatis/mappers/*.xml
-  type-aliases-package: com.dominick.redis.modules.*.entiy
-#  config-location: classpath:mybatis/mybatis-config.xml
+#mybatis:
+#  mapper-locations: classpath:mybatis/mappers/*.xml
+#  type-aliases-package: com.dominick.redis.modules.*.entiy
+#server:
+#  servlet:
+#    context-path: /redis
+#  port: 2058
+##  config-location: classpath:mybatis/mybatis-config.xml

@@ -55,8 +55,8 @@ public abstract class CrudService<D extends CrudDao<T>,T> {
 	 * @param entity
 	 * @return
 	 */
-	public int inset(T entity) {
-		return dao.inset(entity);
+	public int insert(T entity) {
+		return dao.insert(entity);
 	}
 
 	/**
@@ -66,7 +66,8 @@ public abstract class CrudService<D extends CrudDao<T>,T> {
 	 * @return
 	 */
 	public T update(T entity) {
-		return dao.update(entity);
+		dao.update(entity);
+		return entity;
 	}
 
 	/**

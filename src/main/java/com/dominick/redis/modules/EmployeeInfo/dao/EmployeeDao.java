@@ -10,4 +10,5 @@ import com.dominick.redis.framework.persistence.CrudDao;
  * @function:
  */
 public interface EmployeeDao extends CrudDao<Employee> {
+	public Employee selectByLastName(String lastName);
 }

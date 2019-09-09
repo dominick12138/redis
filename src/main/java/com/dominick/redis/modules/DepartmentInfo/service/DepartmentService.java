@@ -3,16 +3,16 @@ package com.dominick.redis.modules.DepartmentInfo.service;
 import com.dominick.redis.framework.service.CrudService;
 import com.dominick.redis.modules.DepartmentInfo.dao.DepartmentDao;
 import com.dominick.redis.modules.DepartmentInfo.entity.Department;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.Caching;
+import com.dominick.redis.modules.EmployeeInfo.entity.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class DepartmentService extends CrudService<DepartmentDao,Department> {
+	@Autowired
+	DepartmentDao departmentDao;
 
 //	@Cacheable(value = "listDept")
 	public List<Department> getList() {
@@ -45,7 +45,7 @@ public class DepartmentService extends CrudService<DepartmentDao,Department> {
 	}
 
 	public int insertDept(Department department) {
-		return super.inset(department);
+		return super.insert(department);
 	}
 
 //	@CachePut(cacheNames = "getDept",key = "#result.id")
@@ -54,5 +54,7 @@ public class DepartmentService extends CrudService<DepartmentDao,Department> {
 		super.update(department);
 		return department;
 	}
+
+
 
 }
